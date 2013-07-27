@@ -14,4 +14,3 @@ end
 
 
 puts "Monthly payment is " + "%.3f" % frm(6.5, 30, 200000).to_s + " currency"
-

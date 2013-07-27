@@ -4,7 +4,7 @@
 def primes(n)
 	counter = 0
 	primes = []
-	start = 3
+	start = 2
 	while counter < n do
 		prime = true
 		(2..start - 1).each do |v|
@@ -24,5 +24,3 @@ end
 
 p primes(10)
 p primes(20)
-p primes(200)
-p primes(2000)

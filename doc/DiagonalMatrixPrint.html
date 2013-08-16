@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class BinaryDecimalConverter - RDoc Documentation</title>
+<title>class DiagonalMatrixPrint - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -47,7 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>binary_decimal_converter.rb
+    <li>diagonal_matrix.rb
   </ul>
 </nav>
 
@@ -70,9 +70,9 @@
 
   <ul class="link-list">
     
-    <li><a href="#method-i-bin_to_dec">#bin_to_dec</a>
+    <li><a href="#method-i-get_matrix">#get_matrix</a>
     
-    <li><a href="#method-i-dec_to_bin">#dec_to_bin</a>
+    <li><a href="#method-i-print_diagonally">#print_diagonally</a>
     
   </ul>
 </nav>
@@ -141,12 +141,31 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class BinaryDecimalConverter</h1>
+  <h1 class="class">class DiagonalMatrixPrint</h1>
 
   <div id="description" class="description">
     
-<p><a href="Class.html">Class</a> that defines methods for decimal &lt;-&gt;
-binary conversion</p>
+<p>Given a 2D  regular (n x n) matrix, prints all elements of the given matrix
+in diagonal order. For  Example:</p>
+
+<pre>[1, 2, 3],
+[4, 5, 6], 
+[7, 8, 9]</pre>
+
+<p>Diagonal printing of the above matrix is</p>
+
+<pre>1   
+    2     4   
+    3     5   7 
+    6     8   
+    9</pre>
+
+<p>Usage:</p>
+
+<pre>m = DiagonalMatrixPrint.new
+m.get_matrix([[1, 2, 3],[4, 5, 6], [7, 8, 9]])
+m.get_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
+m.get_matrix([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]])</pre>
 
   </div><!-- description -->
 
@@ -168,89 +187,76 @@ binary conversion</p>
       <h3 class="section-header">Public Instance Methods</h3>
 
     
-      <div id="method-i-bin_to_dec" class="method-detail ">
+      <div id="method-i-get_matrix" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">bin_to_dec</span><span
-            class="method-args">(number)</span>
+          <span class="method-name">get_matrix</span><span
+            class="method-args">(m)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
         
 
         <div class="method-description">
           
-          <p>Gets the last digit and raises it to power of counter then it is added to
-result handles only positive numbers</p>
+          <p>Get matrix from input</p>
           
 
           
-          <div class="method-source-code" id="bin_to_dec-source">
-            <pre><span class="ruby-comment"># File binary_decimal_converter.rb, line 8</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">bin_to_dec</span>(<span class="ruby-identifier">number</span>)
-        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">number</span>.<span class="ruby-identifier">integer?</span>
-                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;not an integer&quot;</span>
-        <span class="ruby-keyword">end</span>
-        <span class="ruby-identifier">counter</span> = <span class="ruby-value">0</span>
-        <span class="ruby-identifier">result</span> = <span class="ruby-value">0</span>
-        <span class="ruby-keyword">while</span> <span class="ruby-identifier">number</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
-                <span class="ruby-identifier">temp</span> = <span class="ruby-identifier">number</span> <span class="ruby-operator">%</span> <span class="ruby-value">10</span>
-                <span class="ruby-keyword">if</span> <span class="ruby-identifier">temp</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
-                        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;not a binary number&quot;</span>
-                <span class="ruby-keyword">end</span>
-                <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">temp</span> * <span class="ruby-value">2</span> <span class="ruby-operator">**</span> <span class="ruby-identifier">counter</span>
-                <span class="ruby-identifier">counter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-                <span class="ruby-identifier">number</span> <span class="ruby-operator">/=</span> <span class="ruby-value">10</span>
-        <span class="ruby-keyword">end</span>
-        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+          <div class="method-source-code" id="get_matrix-source">
+            <pre><span class="ruby-comment"># File diagonal_matrix.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_matrix</span> <span class="ruby-identifier">m</span>
+        <span class="ruby-identifier">matrix</span> = <span class="ruby-identifier">m</span>
+        <span class="ruby-identifier">print_diagonally</span> <span class="ruby-identifier">matrix</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- bin_to_dec-source -->
+          </div><!-- get_matrix-source -->
           
         </div>
 
         
 
         
-      </div><!-- bin_to_dec-method -->
+      </div><!-- get_matrix-method -->
 
     
-      <div id="method-i-dec_to_bin" class="method-detail ">
+      <div id="method-i-print_diagonally" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">dec_to_bin</span><span
-            class="method-args">(number)</span>
+          <span class="method-name">print_diagonally</span><span
+            class="method-args">(matrix)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
         
 
         <div class="method-description">
           
-          <p>gets the result of +number % 2+. Appends the result at the beginning of the
-string and divides the number +by 2 while &gt; 0+ returns
-<code>string</code> handles only positive numbers</p>
+          <p>Prints matrix diagonally</p>
           
 
           
-          <div class="method-source-code" id="dec_to_bin-source">
-            <pre><span class="ruby-comment"># File binary_decimal_converter.rb, line 31</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">dec_to_bin</span>(<span class="ruby-identifier">number</span>)
-        <span class="ruby-identifier">result</span> = <span class="ruby-string">&quot;&quot;</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">number</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-keyword">or</span> <span class="ruby-operator">!</span><span class="ruby-identifier">number</span>.<span class="ruby-identifier">integer?</span>
-                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;invalid input&quot;</span>
+          <div class="method-source-code" id="print_diagonally-source">
+            <pre><span class="ruby-comment"># File diagonal_matrix.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">print_diagonally</span> <span class="ruby-identifier">matrix</span>
+        <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">&lt;=</span> ((<span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-operator">**</span> <span class="ruby-value">2</span>)
+                <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                        <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+                                <span class="ruby-keyword">if</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sum</span>)
+                                        <span class="ruby-identifier">print</span> <span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\t&quot;</span>
+                                <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;\n&quot;</span>
+                <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>;
         <span class="ruby-keyword">end</span>
-        <span class="ruby-keyword">while</span> <span class="ruby-identifier">number</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
-                <span class="ruby-identifier">result</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">0</span>, (<span class="ruby-identifier">number</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>)
-                <span class="ruby-identifier">number</span> <span class="ruby-operator">/=</span> <span class="ruby-value">2</span>
-        <span class="ruby-keyword">end</span>
-        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- dec_to_bin-source -->
+          </div><!-- print_diagonally-source -->
           
         </div>
 
         
 
         
-      </div><!-- dec_to_bin-method -->
+      </div><!-- print_diagonally-method -->
 
     
     </section><!-- public-instance-method-details -->

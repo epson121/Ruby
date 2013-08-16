@@ -1,6 +1,9 @@
-
-#program that generates first n prime numbers
-
+##
+# Program that generates first +n+ prime numbers
+# 	#Usage:
+# 	p primes(10)
+# 	p primes(20) 
+#
 def primes(n)
 	counter = 0
 	primes = []
@@ -21,6 +24,3 @@ def primes(n)
 	end
 	return primes
 end
-
-p primes(10)
-p primes(20)

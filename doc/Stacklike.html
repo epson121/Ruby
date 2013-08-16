@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Stacklike - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>wgr/modules/stacklike.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-pop_from_stack">#pop_from_stack</a>
+    
+    <li><a href="#method-i-print">#print</a>
+    
+    <li><a href="#method-i-push_to_stack">#push_to_stack</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./C.html">C</a>
+  
+    <li><a href="./C/M.html">C::M</a>
+  
+    <li><a href="./C/M/N.html">C::M::N</a>
+  
+    <li><a href="./C/M/N/D.html">C::M::N::D</a>
+  
+    <li><a href="./IL.html">IL</a>
+  
+    <li><a href="./IL/Node.html">IL::Node</a>
+  
+    <li><a href="./A.html">A</a>
+  
+    <li><a href="./BinaryDecimalConverter.html">BinaryDecimalConverter</a>
+  
+    <li><a href="./Car.html">Car</a>
+  
+    <li><a href="./CartesianProduct.html">CartesianProduct</a>
+  
+    <li><a href="./Class.html">Class</a>
+  
+    <li><a href="./Dessert.html">Dessert</a>
+  
+    <li><a href="./DiagonalMatrixPrint.html">DiagonalMatrixPrint</a>
+  
+    <li><a href="./Enumerable.html">Enumerable</a>
+  
+    <li><a href="./Foo.html">Foo</a>
+  
+    <li><a href="./JellyBean.html">JellyBean</a>
+  
+    <li><a href="./NoSuchStrategyError.html">NoSuchStrategyError</a>
+  
+    <li><a href="./Numeric.html">Numeric</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Palantir.html">Palantir</a>
+  
+    <li><a href="./Stack.html">Stack</a>
+  
+    <li><a href="./Stacklike.html">Stacklike</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./WrongNumberOfPlayersError.html">WrongNumberOfPlayersError</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Stacklike</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Stacklike.html">Stacklike</a> module that gives classes ability of
+stacking</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>initialization</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File wgr/modules/stacklike.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+        <span class="ruby-ivar">@stack</span> <span class="ruby-operator">||=</span> []
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-pop_from_stack" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pop_from_stack</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pop from stack</p>
+          
+
+          
+          <div class="method-source-code" id="pop_from_stack-source">
+            <pre><span class="ruby-comment"># File wgr/modules/stacklike.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pop_from_stack</span>
+        <span class="ruby-ivar">@stack</span>.<span class="ruby-identifier">pop</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pop_from_stack-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pop_from_stack-method -->
+
+    
+      <div id="method-i-print" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">print</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Printing</p>
+          
+
+          
+          <div class="method-source-code" id="print-source">
+            <pre><span class="ruby-comment"># File wgr/modules/stacklike.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">print</span>
+        <span class="ruby-ivar">@stack</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- print-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- print-method -->
+
+    
+      <div id="method-i-push_to_stack" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push_to_stack</span><span
+            class="method-args">(elem)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Push to stack</p>
+          
+
+          
+          <div class="method-source-code" id="push_to_stack-source">
+            <pre><span class="ruby-comment"># File wgr/modules/stacklike.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">push_to_stack</span> <span class="ruby-identifier">elem</span>
+        <span class="ruby-ivar">@stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">elem</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- push_to_stack-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- push_to_stack-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

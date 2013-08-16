@@ -1,11 +1,16 @@
 #Luka Rajcevic 27.07. 2012.
 #Rock-Paper-Scissors
 
-
+##
+# Custom error class
 class WrongNumberOfPlayersError < StandardError ; end
+
+##
+# Custom error class
 class NoSuchStrategyError < StandardError ; end
 
-
+##
+# Determines the winner of the game
 def rps_game_winner(game)
   raise WrongNumberOfPlayersError unless game.length == 2
   game.each do |sign|
@@ -26,11 +31,16 @@ end
 s =  [ ["Richard", "R"],  ["Michael", "R"] ]
 rps_game_winner([ ["Richard", "R"],  ["Michael", "R"] ])
 
+##
+# determines if an array given contains game to be played
 def contains_game(game)
   return game[0][0].is_a?(String)
 end
 
-
+##
+# Plays a tournament and determines the winner
+# 	#Usage:
+# 	p rps_tournament_winner(tournament_list)	
 def rps_tournament_winner(tournament)
 	if contains_game(tournament)
 		return rps_game_winner(tournament)

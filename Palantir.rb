@@ -1,26 +1,39 @@
-=begin
-Variable-Base Expression Evaluation
-You've woken up one day to find that everyone suddenly expresses numbers in different number bases. You're seeing prices in octal and phone numbers in hexadecimal. It's a numerical Tower of Babel! For your own sanity, you decide to program a simple mathematical expression evaluator that can handle numbers in different number bases. It should support addition, subtraction, and multiplication, should respect order of operations, and should handle number bases between 2 and 16.
+##
+# Variable-Base Expression Evaluation
+# You've woken up one day to find that everyone suddenly expresses numbers 
+# in different number bases. You're seeing prices in octal and phone numbers 
+# in hexadecimal. It's a numerical Tower of Babel! For your own sanity, you 
+# decide to program a simple mathematical expression evaluator that can handle 
+# numbers in different number bases. It should support addition, subtraction, 
+# and multiplication, should respect order of operations, and should handle number 
+# bases between 2 and 16.
 
-While your language of choice may directly support expression evaluation, please create your own.
+# While your language of choice may directly support expression evaluation, 
+# please create your own.
 
-The input on stdin is a mathematical expression on a single line. Number constants are expressed like "123_4", which is "123" in base 4, which is 27 in base 10. Some digits in the higher bases will be represented with uppercase letters. Numbers within the expression will always be non-negative integers. The operators will be +, -, and *. Whitespace should be ignored.
+# The input on stdin is a mathematical expression on a single line. Number constants
+# are expressed like "123_4", which is "123" in base 4, which is 27 in base 10. 
+# Some digits in the higher bases will be represented with uppercase letters. Numbers
+# within the expression will always be non-negative integers. The operators will 
+# be +, -, and *. Whitespace should be ignored.
 
-Your program should emit to stdout a single base-10 number with no underscores.
+# Your program should emit to stdout a single base-10 number with no underscores.
 
-While correctness and performance are the most important parts of this problem, a human will be reading your solution, so please make an effort to submit clean, readable code. In particular, do not write code as if you were solving a problem for a competition.
+# While correctness and performance are the most important parts of this problem, a 
+# human will be reading your solution, so please make an effort to submit clean, 
+# readable code. In particular, do not write code as if you were solving a problem 
+# for a competition.
 
-Here's an example input and output:
-
-   Input:
-1430_5 - 110_2 * 2A_12 + 10_10
-
-   Output:
-46
-=end
-
+# Usage:
+# 	#Input
+# 	1430_5 - 110_2 * 2A_12 + 10_10
+#
+#   #Output:
+# 	46
 class Palantir
 
+	##
+	# method for parsing expression
 	def parse_expression(expr) 
 		infix = ""
 		expr = expr.split(" ")
@@ -37,6 +50,8 @@ class Palantir
 		p evaluate_postfix (convert_to_postfix(infix))
 	end
 
+	##
+	# converts +num+ to base 10 from +base+ (2..9)
 	def convert_to_base_10(num, base)
 		base_ = {"A" => 10, "B" => 11, "C" => 12, "D" => 13, "E" => 14, "F" => 15}
 		result = 0
@@ -57,6 +72,8 @@ class Palantir
 		result.to_s
 	end
 
+	##
+	# evaluates postfix using +stack+
 	def evaluate_postfix postfix
 		result = 0
 		stack = []
@@ -80,11 +97,15 @@ class Palantir
 		stack.pop
 	end
 
+	##
+	# defines precedence +hash+ to determine order of the operations
 	def precedence a
 		prec = {"+" => 1, "-" => 1, "*" => 2}
 		prec[a]
 	end
 
+	##
+	# converts +infix+ to *postfix* type
 	def convert_to_postfix infix
 		stack = []
 		postfix = ""

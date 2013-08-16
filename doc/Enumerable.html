@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>RDoc Documentation</title>
+<title>module Enumerable - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
 
 
-<body>
+<body id="top" class="module">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -42,6 +42,34 @@
   <ul id="search-results" class="initially-hidden"></ul>
 </nav>
 
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>advanced_OOP.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-palindrome-3F">#palindrome?</a>
+    
+  </ul>
+</nav>
+
+  </div>
 
   <div id="project-metadata">
     
@@ -104,7 +132,68 @@
   </div>
 </nav>
 
-<p>This is the API documentation for RDoc Documentation.
+<div id="documentation">
+  <h1 class="module">module Enumerable</h1>
+
+  <div id="description" class="description">
+    
+<p>Metaprogramming <a href="Enumerable.html">Enumerable</a> class</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-palindrome-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">palindrome?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Defines palindrome method</p>
+          
+
+          
+          <div class="method-source-code" id="palindrome-3F-source">
+            <pre><span class="ruby-comment"># File advanced_OOP.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">palindrome?</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">entries</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:reverse</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">entries</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">entries</span>.<span class="ruby-identifier">reverse</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- palindrome-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- palindrome-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
 
 
 <footer id="validator-badges">

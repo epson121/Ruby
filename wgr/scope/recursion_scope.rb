@@ -1,4 +1,11 @@
+##
+# Testing variable +self+ value after recursion
+# Usage: 
+# 	c = C.new
+# 	c.x("First value for a", true)
 class C
+	##
+	# Testing method
 	def x(value_for_a,recurse=false)
 		a = value_for_a
 		print "Here's the inspect-string for 'self':"
@@ -13,6 +20,3 @@ class C
 		end
 	end
 end
-
-c = C.new
-c.x("First value for a", true)

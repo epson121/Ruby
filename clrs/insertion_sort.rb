@@ -40,10 +40,3 @@ def sort_insertion_reverse(a)
 	end
 	a
 end
-
-
-#sort_insertion([5, 4, 3, 2, 1, 4])
-#sort_insertion([5, 3, 2, 5, 3, 5, 6, 7, 8, 4, 3, 2, 12, 23, 1, 123, 4545, 3543554])
-
-p sort_insertion_reverse([5, 4, 3, 2, 1, 4])
-#sort_insertion_reverse([5, 3, 2, 5, 3, 5, 6, 7, 8, 4, 3, 2, 12, 23, 1, 123, 4545, 3543554])

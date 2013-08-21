@@ -24,7 +24,7 @@ def bsearch(a, p, q, v)
 	elsif a[q] > v
 		bsearch(a, p, q, v)
 	elsif a[q] < v
-		bsearch(a, q+1, a.length-1, v)
+		bsearch(a, q+1, a.length, v)
 	end
 end
 
@@ -34,4 +34,30 @@ end
 # v -> value for searching
 def binary_search(a, v)
 	bsearch(merge_sort_array(a), 0, a.length, v)
+end
+
+
+##
+# Given an array +s+ and a value +x+,
+# find whether exist 2 numbers in array +s+ that, 
+# when added together, give +x+.
+# Solved using binary search
+# Example:
+# 	a = [1, 3, 4, 5]
+# 	p sum_exists(a, 4) => true
+# 	p sum_exists(a, 10) =>  false
+def sum_exists(s, x)
+	# Sort the given array
+	s = merge_sort_array(s)
+	# Loop through the elements
+	for a in 0..s.length - 1
+		# if in the part of array that is 1 from right of the +a+
+		# exists a number whose value is +x - s[a]+, return true
+	    b = binary_search(s[a+1..s.length], x - s[a])
+	    if !b.nil?
+	        return true
+	    end
+	end
+	# if none found, return false
+	return false
 end

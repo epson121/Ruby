@@ -19,8 +19,8 @@ def fibo_memoized(n)
 end
 
 # max value before stack level goes too deep
-#p fibo_memoized(7708)
-
+p fibo_memoized(30)
+p fibo_memoized(2000)
 
 require "benchmark"
 

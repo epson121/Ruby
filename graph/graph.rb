@@ -31,7 +31,7 @@ class Graph < Array
 	##
 	# connecting two vertices (+src+ and +dest+ with length +len+)
 	def connect(src, dest, len = 1)
-		if self.include?(src) and self.include?(dest) and !edge_exists?(src, dest)
+		if self.include?(src) and self.include?(dest) and !edge_exists?(src, dest) and len > 0
 				@e << Edge.new(src, dest, len)
 		else
 			return nil
@@ -139,15 +139,15 @@ end
 
 a = Graph.new
 a.push(1, 2, 3, 4, 5, 6)
-# a.connect(1, 2, 1)
-# a.connect(1, 4, 3)
-# a.connect(2, 3, 2)
-# a.connect(4, 3, 4)
-# a.connect(1, 5, 2)
-# a.connect(5, 6, 2)
-# a.connect(5, 4, 3)
-# a.connect(4, 6, 3)
-# a.connect(3, 6, 5)
+a.connect(1, 2, 1)
+a.connect(1, 4, 3)
+a.connect(2, 3, 2)
+a.connect(4, 3, 4)
+a.connect(1, 5, 2)
+a.connect(5, 6, 2)
+a.connect(5, 4, 3)
+a.connect(4, 6, 3)
+a.connect(3, 6, 5)
 a.connect_mutually(1, 2, 1)
 a.connect_mutually(1, 4, 3)
 a.connect_mutually(2, 3, 2)

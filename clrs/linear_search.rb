@@ -14,6 +14,7 @@ def linear_search(a, v)
 	nil
 end
 
+
 ##
 # Solved using ruby built-in method
 # example:

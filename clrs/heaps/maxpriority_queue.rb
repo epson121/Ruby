@@ -13,6 +13,10 @@ require_relative "heap"
 #  		p pq.max_heap_insert(9)
 #  		p pq.max_heap_insert(11)
 #  		p pq.max_heap_insert(10)
+#  		pq.heap_delete(3)
+#  		p pq.heap
+#  		pq.heap_delete(2)
+#  		p pq.heap
 class MaxPriorityQueue < Heap
 
 	##
@@ -20,7 +24,7 @@ class MaxPriorityQueue < Heap
 	def initialize(array)
 		@max = lambda {|a, b| a > b}
 		super
-		build_maxheap() if !heaptype(@max, @heap)
+		build_maxheap() if @heap.length > 0 and !heaptype(@max, @heap)
 	end
 
 	##
@@ -77,5 +81,13 @@ class MaxPriorityQueue < Heap
 		heap_incease_key(@heap.length-1, key)
 	end
 
-end
+	def heap_delete(i)
+		last = @heap.length - 1
+		temp = @heap[last] 
+		@heap[last] = @heap[i]
+		@heap[i] = temp
+		@heap.pop()
+		n_heapify(@max, i)
+	end
 
+end

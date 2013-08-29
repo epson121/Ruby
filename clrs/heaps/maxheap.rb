@@ -40,7 +40,7 @@ class MaxHeap < Heap
 	##
 	# used to heapsort an array
 	def maxheapify_heapsort(p, i = 0)
-		n_heapify_heapsort(@max, i, p)
+		n_heapify_heapsort(@max, p, i)
 	end
 
 	##

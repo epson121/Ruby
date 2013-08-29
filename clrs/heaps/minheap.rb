@@ -49,7 +49,7 @@ class MinHeap < Heap
 	#
 	# used to heapsort an array
 	def minheapify_heapsort(p, i = 0)
-		n_heapify_heapsort(@min, i, p)
+		n_heapify_heapsort(@min, p, i)
 	end
 
 	##

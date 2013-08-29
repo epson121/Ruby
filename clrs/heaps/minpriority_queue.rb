@@ -23,7 +23,7 @@ class MinPriorityQueue < Heap
 	def initialize(array)
 		@min = lambda {|a, b| a < b}
 		super
-		build_minheap() if !heaptype(@min, @heap)
+		build_minheap() if @heap.length > 0 and !heaptype(@min, @heap)
 	end
 
 	##
@@ -56,6 +56,9 @@ class MinPriorityQueue < Heap
 		end
 	end
 
+	##
+	# change the value of element at
+	# position i and maintain min priority queue
 	def heap_incease_key(i, key)
 		if @heap.length <= i
 			return nil
@@ -70,11 +73,51 @@ class MinPriorityQueue < Heap
 		@heap
 	end
 
+	##
+	# insert new element in heap (queue)
 	def min_heap_insert(key)
 		@heap.push(-1)
 		heap_incease_key(@heap.length-1, key)
 	end
 
+	##
+	# delete element at index +i+ from queue
+	def heap_delete(i)
+		last = @heap.length - 1
+		temp = @heap[last] 
+		@heap[last] = @heap[i]
+		@heap[i] = temp
+		@heap.pop()
+		n_heapify(@min, i)
+	end
+
 end
 
 
+	##
+	# Give an O(n lg k)-time algorithm to merge k sorted lists into one sorted list, where n is the
+	# total number of elements in all the input lists. 
+	# (Hint: Use a min-heap for k-way merging.)
+
+	# def merge_k_presorted_lists(*a)
+	# 		len = a.length - 1
+	# 		res = []
+	# 		temp = MinPriorityQueue.new([])
+	# 		min = 0
+	# 		#loop
+	# 		for i in 0..len
+	# 			temp.min_heap_insert(a[i][0])
+	# 			min = i if a[i][0] < a[min][0]
+	# 			a[i].delete_at(0)
+	# 		end
+
+	# 		res << temp.heap_extract_min()
+	# 		temp.min_heap_insert(a[min][0])
+	# end
+
+
+
+
+# p merge_k_presorted_lists([1, 2, 3, 4], 
+# 													[1, 5, 6, 9], 
+# 													[2, 8, 10, 12, 13])

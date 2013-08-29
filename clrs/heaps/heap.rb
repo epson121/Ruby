@@ -82,7 +82,7 @@ class Heap
 	##
 	# same as n_heapify, but keeps track of the index from which
 	# the array is sorted (given as p in arguments)
-	def n_heapify_heapsort(lam, i=0, p)
+	def n_heapify_heapsort(lam, p, i = 0)
 		while size > 0
 			l = left_index(i)
 			r = right_index(i)

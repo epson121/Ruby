@@ -84,12 +84,12 @@ p "        # this is a ruby comment" =~ /^\s*#[\s\w]*?$/ # => "0"
 # m -> . will match everything including the newline "\n" character
 # x -> ignore whitespace that is not explicitly added with \s (good for comments)
 date_regex = / # start of the regex
-							(\d\d\.) # day match group
-							\s # whitespace
-							(\d\d\.) # month match group
-							\s # whitespace
-							(\d\d\d\d\.)$ # year match group
-							/x # => comments are possible because of this x at the end
+				(\d\d\.) # day match group
+				\s # whitespace
+				(\d\d\.) # month match group
+				\s # whitespace
+				(\d\d\d\d\.)$ # year match group
+				/x # => comments are possible because of this x at the end
 
 date_regex.match("04. 09. 2013.")							
 p $1

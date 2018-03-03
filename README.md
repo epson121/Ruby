@@ -11,4 +11,4 @@ This repo currently includes, more or less, the following things:
 - /clrs ~=> algorithms from "Introduction to algorithms"
 
 
-This repositoriy is constantly being updated.
+This repository is constantly being updated.

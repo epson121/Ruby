@@ -1,6 +1,6 @@
 ## Ruby scripts/snippets/programs
 
-This is my ***Ruby*** repository. In here I place all my ruby code made while learning some new concepts (various tutorials), reading books or making programs/scripts that are too small for their own repository.
+This is my ***Ruby*** repository [test branch]. In here I place all my ruby code made while learning some new concepts (various tutorials), reading books or making programs/scripts that are too small for their own repository.
 
 This repo currently includes, more or less, the following things:
 
